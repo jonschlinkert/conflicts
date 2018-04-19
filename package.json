@@ -1,0 +1,43 @@
+{
+  "name": "conflicts",
+  "description": "Detect file conflicts.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/conflicts",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/conflicts",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/conflicts/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "conflicts"
+  ],
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "dateformat": "^3.0.3",
+    "diff": "^3.5.0",
+    "file-type": "^7.6.0",
+    "image-size": "^0.6.2",
+    "is-binary-buffer": "^2.0.0",
+    "kind-of": "^6.0.2",
+    "log-utils": "^0.2.1",
+    "prompt-expand": "^1.0.1",
+    "read-chunk": "^2.1.0",
+    "through2": "^2.0.3",
+    "vinyl": "^2.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3",
+    "vinyl-fs": "^3.0.2"
+  }
+}
