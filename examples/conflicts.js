@@ -1,1 +1,0 @@
-const conflicts = require('..');
