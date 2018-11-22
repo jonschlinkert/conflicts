@@ -1,6 +1,6 @@
 {
   "name": "conflicts",
-  "description": "Detect file conflicts.",
+  "description": "Detects when a new file is different than an existing file and prompts the user for action.",
   "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/conflicts",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",

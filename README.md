@@ -1,6 +1,6 @@
 # conflicts [![NPM version](https://img.shields.io/npm/v/conflicts.svg?style=flat)](https://www.npmjs.com/package/conflicts) [![NPM monthly downloads](https://img.shields.io/npm/dm/conflicts.svg?style=flat)](https://npmjs.org/package/conflicts) [![NPM total downloads](https://img.shields.io/npm/dt/conflicts.svg?style=flat)](https://npmjs.org/package/conflicts) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/conflicts.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/conflicts)
 
-> Detect file conflicts.
+> Detects when a new file is different than an existing file and prompts the user for action.
 
 Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
 
@@ -18,16 +18,6 @@ $ npm install --save conflicts
 const Conflicts = require('conflicts');
 const conflicts = new Conflicts();
 ```
-
-## Options
-
-The following options may be used with the [.detect](#detect) method.
-
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| Option | Type | Default | Description |
-
-Additionally, options are forwarded to [enquirer](https://github.com/enquirer/enquirer) for customizing prompt behavior. See the [unit tests](test/gulp.js) for examples.
 
 ## API
 
