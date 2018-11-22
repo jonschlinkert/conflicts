@@ -18,6 +18,15 @@ describe('conflicts.files', () => {
     assert.equal(actual.length, 5);
   });
 
+  it('should add a .diff string to each element in the resulting array', async () => {
+    let files = await glob('*.txt', { cwd: cwd() });
+    let actual = await conflicts.diffFiles(files, { cwd: cwd(), dest: cwd('dist'), overwrite: true });
+    for (let ele of actual) {
+      assert.equal(typeof ele.diff, 'string');
+    }
+    assert.equal(actual.length, 5);
+  });
+
   it('should prompt for feedback', async function() {
     this.timeout(2000);
     let files = await glob('*.txt', { cwd: cwd() });

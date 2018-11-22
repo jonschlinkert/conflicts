@@ -1,7 +1,7 @@
 {
   "name": "conflicts",
   "description": "Detect file conflicts.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/conflicts",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/conflicts",
@@ -10,33 +10,50 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [
-    "conflicts"
-  ],
   "dependencies": {
-    "ansi-colors": "^3.0.5",
+    "ansi-colors": "^3.2.1",
     "cli-table": "^0.3.1",
     "dateformat": "^3.0.3",
     "diff": "^3.5.0",
-    "file-type": "^9.0.0",
+    "enquirer": "^2.0.7",
+    "file-type": "^10.5.0",
     "image-size": "^0.6.3",
-    "is-binary-buffer": "^2.0.0",
-    "prompt-base": "file:../../@enquirer/prompts/prompt-base"
+    "is-binary-buffer": "^2.0.0"
   },
   "devDependencies": {
     "glob": "^7.1.3",
-    "mocha": "^3.5.3",
-    "time-require": "github:jonschlinkert/time-require",
-    "vinyl": "^2.2.0",
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^5.2.0",
     "vinyl-fs": "^3.0.3"
+  },
+  "keywords": [
+    "conflicts"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "diff",
+      "vinyl"
+    ]
   }
 }

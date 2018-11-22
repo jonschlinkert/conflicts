@@ -5,7 +5,7 @@ const path = require('path');
 const assert = require('assert');
 const vfs = require('vinyl-fs');
 const cwd = path.resolve.bind(path, __dirname, 'fixtures');
-const conflicts = require('../gulp-conflicts');
+const conflicts = require('../conflicts');
 
 const nextTick = fn => {
   return new Promise((resolve, reject) => {
@@ -50,8 +50,8 @@ describe('gulp plugin', () => {
       show: false,
       onConflict(existing, proposed, opts) {
         opts.onRun = async function() {
-          await nextTick(() => this.keypress(0)); // yes
-          await nextTick(() => this.submit());
+          await this.keypress(0); // yes
+          await this.submit();
         };
       }
     };
@@ -195,13 +195,13 @@ describe('gulp plugin', () => {
       dest: cwd('dist'),
       show: false,
       onConflict(existing, proposed, opts) {
-        if (seen.has(proposed)) {
+        if (seen.has(proposed.path)) {
           opts.onRun = async function() {
             await nextTick(() => this.keypress(0)); // "yes"
             await nextTick(() => this.submit());
           };
         }
-        seen.add(proposed);
+        seen.add(proposed.path);
       }
     };
 

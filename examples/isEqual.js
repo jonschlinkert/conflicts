@@ -6,4 +6,5 @@ const conflicts = new Conflicts();
 
 let file1 = { contents: Buffer.from('a') };
 let file2 = { contents: Buffer.from('b') };
-console.log(conflicts.isSame(file1, file2, { fs: false }));
+
+console.log(conflicts.isEqual(file1, file2, { fs: false }));
