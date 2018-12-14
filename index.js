@@ -96,7 +96,7 @@ class Conflicts extends Events {
         await opts.onConflict(fileB, fileA, opts);
       }
 
-      let prompt = this.constructor.prompt(fileB, opts);
+      let prompt = this.constructor.prompt(fileA, opts);
       let action = this.state.action = (fileB.action || await prompt.run());
       await actions[action](fileB, fileA, opts);
       return action;
