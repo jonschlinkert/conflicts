@@ -4,6 +4,7 @@ const path = require('path');
 const Events = require('events');
 const diffFile = require('./lib/diff');
 const Actions = require('./lib/actions');
+const styles = require('./lib/styles');
 const File = require('./lib/file');
 const same = require('./lib/same');
 const { exists, relative, toFile } = require('./lib/utils');
@@ -33,6 +34,7 @@ class Conflicts extends Events {
     }
 
     this.options = { cwd: process.cwd(), ...options };
+    this.styles = styles.merge(options);
     this.state = { files: [] };
     this.File = Vinyl;
   }
@@ -59,7 +61,7 @@ class Conflicts extends Events {
 
   async detect(proposed, existing, options) {
     let opts = { File: this.file, ...this.options, ...options };
-    let actions = new Actions(this, opts);
+    let actions = new Actions(this, opts, this.styles);
 
     let fileA = toFile(existing, opts);
     let fileB = toFile(proposed, opts);
