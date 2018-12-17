@@ -264,11 +264,31 @@ class Conflicts extends Events {
       initial: 'no',
       message: `File exists, want to overwrite ${relative(file)}?`,
       choices: [
-        { name: 'yes', hint: '(overwrite the file)' },
-        { name: 'no', hint: '(do not overwrite the file)' },
-        { name: 'all', hint: '(overwrite the file and all remaining files)' },
-        { name: 'abort', hint: '(stop and exit the process)' },
-        { name: 'diff', hint: '(show a diff between the new file and existing)' }
+        {
+          name: 'yes',
+          message: 'Yes',
+          hint: '- overwrite the file'
+        },
+        {
+          name: 'no',
+          message: 'No',
+          hint: '- do not overwrite the file'
+        },
+        {
+          name: 'all',
+          message: 'All',
+          hint: '- overwrite the file and all remaining files'
+        },
+        {
+          name: 'abort',
+          message: 'Abort',
+          hint: '- stop and exit the process'
+        },
+        {
+          name: 'diff',
+          message: 'Diff',
+          hint: '- show a diff between the new file and existing'
+        }
       ]
     };
 
